@@ -4,7 +4,7 @@ import { Section, Container } from '@components/global';
 const Brands = () => (
   <Section id="brands" accent>
     <Container>
-      <div>How it works?</div>
+      <h1>Как работят?</h1>
       <iframe
         title="How it works"
         width="700"

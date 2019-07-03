@@ -7,34 +7,34 @@ import { Section, Container } from '@components/global';
 
 const TEAM = [
   {
-    name: 'Josh Peck',
-    image: 'josh.jpg',
-    role: 'Founder',
+    name: 'Ергономичен дизайн',
+    image: '1.jpg',
+    //  role: 'Founder',
   },
   {
-    name: 'Lisa Haydon',
-    image: 'lisa.jpg',
-    role: 'Art Director',
+    name: 'Малки и удобни',
+    image: '2.jpeg',
+    //role: 'Art Director',
   },
   {
-    name: 'Ashlyn Harris',
-    image: 'ashlyn.jpg',
-    role: 'Frontend Engineer',
+    name: 'Зарядна станция',
+    image: '3.jpg',
+    //role: 'Frontend Engineer',
   },
   {
-    name: 'Todd Joseph',
-    image: 'todd.jpg',
-    role: 'Designer',
+    name: 'Blutooth технология',
+    image: '4.jpg',
+    //role: 'Designer',
   },
   {
-    name: 'Martin White',
-    image: 'martin.jpg',
-    role: 'Backend Engineer',
+    name: 'Малък размер',
+    image: '5.jpg',
+    //role: 'Backend Engineer',
   },
   {
-    name: 'Rose Leslie',
-    image: 'rose.jpg',
-    role: 'Marketing',
+    name: 'Елегантен дизайн',
+    image: '6.jpg',
+    // role: 'Marketing',
   },
 ];
 
@@ -55,8 +55,8 @@ const Team = () => (
           }
         }
         art_team: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "team_work" }
+          sourceInstanceName: { eq: "team" }
+          name: { eq: "airpods" }
         ) {
           childImageSharp {
             fluid(maxWidth: 1600) {
@@ -67,9 +67,11 @@ const Team = () => (
       }
     `}
     render={data => (
-      <Section id="team" accent="secondary">
+      <Section
+        id="team" //accent="secondary"
+      >
         <Container style={{ position: 'relative' }}>
-          <h1>The Team</h1>
+          <h1>Защо да купим</h1>
           <TeamGrid>
             {TEAM.map(({ name, image, role }) => {
               const img = data.allFile.edges.find(
