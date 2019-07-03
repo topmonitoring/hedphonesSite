@@ -29,12 +29,9 @@ const Footer = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_pot: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "customers_pot" }
-        ) {
+        art_pot: file(sourceInstanceName: { eq: "art" }, name: { eq: "fast" }) {
           childImageSharp {
-            fluid(maxWidth: 960) {
+            fluid(maxWidth: 1600) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
@@ -46,15 +43,15 @@ const Footer = () => (
         <Art>
           <Img
             fluid={data.art_pot.childImageSharp.fluid}
-            style={{ width: 480, maxWidth: '100%', marginBottom: -16 }}
+            style={{ width: 480, maxWidth: '100%', marginBottom: 10 }}
           />
         </Art>
         <FooterWrapper>
           <StyledContainer>
             <Copyright>
-              <h2>Absurd</h2>
+              <h2>Audiotechnika</h2>
               <span>
-                Illustrations by
+                Последвайте ни в социялните мрежи
                 {` `}
                 <ExternalLink href="https://twitter.com/diana_valeanu">
                   @diana_valeanu
