@@ -68,7 +68,7 @@ const Team = () => (
     `}
     render={data => (
       <Section
-        id="team" //accent="secondary"
+        id="why to buy" //accent="secondary"
       >
         <Container style={{ position: 'relative' }}>
           <h1>Защо да купим</h1>
