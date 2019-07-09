@@ -45,8 +45,16 @@ export default class Index extends React.Component {
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
         >
+          <Center>
+            <h1>Контакти</h1>
+            <p>
+              Искате да кажете здравей или просто имате още въпроси? Последвайте
+              ни в соцялните мрежи за нови промоций и оферти, или ни пратете
+              съобщение и ние ще се свържем с вас.
+            </p>
+          </Center>
+
           <FormGrid>
-            <h1 style={{ gridArea: 'title' }}>Contact</h1>
             {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
             <input type="hidden" name="form-name" value="contact" />
             <div hidden>
@@ -57,9 +65,6 @@ export default class Index extends React.Component {
             </div>
 
             <div className="field">
-              <label className="label" htmlFor={'name'}>
-                Your name
-              </label>
               <div className="control">
                 <input
                   className="input"
@@ -68,15 +73,13 @@ export default class Index extends React.Component {
                   onChange={this.handleChange}
                   id={'name'}
                   required={true}
+                  placeholder={'Your name'}
                   style={{ gridArea: 'name', width: '100%' }}
                 />
               </div>
             </div>
 
             <div className="field">
-              <label className="label" htmlFor={'email'}>
-                Your e-mail
-              </label>
               <div className="control">
                 <input
                   className="input"
@@ -85,6 +88,7 @@ export default class Index extends React.Component {
                   onChange={this.handleChange}
                   id={'email'}
                   required={true}
+                  placeholder={'Your e-mail'}
                   style={{ gridArea: 'email', width: '100%' }}
                 />
               </div>
@@ -96,9 +100,6 @@ export default class Index extends React.Component {
                 gridArea: 'message',
               }}
             >
-              <label className="label" htmlFor={'message'}>
-                Message
-              </label>
               <div className="control">
                 <textarea
                   className="textarea"
@@ -106,6 +107,7 @@ export default class Index extends React.Component {
                   onChange={this.handleChange}
                   id={'message'}
                   required={true}
+                  placeholder={'Message'}
                   style={{
                     width: '100%',
                     height: '150px',
@@ -134,8 +136,14 @@ const FormGrid = styled.div`
   grid-template-columns: 1fr 1fr;
 
   grid-template-areas:
-    'title title'
     'name email'
     'message message'
     'button button';
+`;
+
+const Center = styled.div`
+  text-align: center;
+  margin: auto;
+  width: 40%;
+  padding: 10px;
 `;
