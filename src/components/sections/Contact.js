@@ -2,6 +2,7 @@ import React from 'react';
 import { navigate } from 'gatsby-link';
 import { Section } from '@components/global';
 import styled from 'styled-components';
+import SocialMediaLinks from '@components/common/SocialMediaLinks';
 
 function encode(data) {
   return Object.keys(data)
@@ -45,6 +46,7 @@ export default class Index extends React.Component {
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
         >
+          {/*uses reactHelmet to add fontasome pack dependancy*/}
           <Center>
             <h1>Контакти</h1>
             <p>
@@ -52,8 +54,8 @@ export default class Index extends React.Component {
               ни в соцялните мрежи за нови промоций и оферти, или ни пратете
               съобщение и ние ще се свържем с вас.
             </p>
+            <SocialMediaLinks />
           </Center>
-
           <FormGrid>
             {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
             <input type="hidden" name="form-name" value="contact" />

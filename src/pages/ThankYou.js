@@ -10,10 +10,8 @@ const ThankYouPage = () => (
     <Center>
       <h1>Thank you!</h1>
       <p>This is a custom thank you page for form submissions</p>
-
       <Link to="/">Go back to the homepage</Link>
     </Center>
-
     <Footer />
   </Layout>
 );
