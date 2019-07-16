@@ -43,13 +43,13 @@ const SlideShow = () => (
     `}
     render={data => (
       <Slide {...properties}>
-        <div className="each-slide">
+        <div className="slide1">
           <Img fluid={data.art_fast.childImageSharp.fluid} />
         </div>
-        <div className="each-slide">
+        <div className="slide2">
           <Img fluid={data.art_learn.childImageSharp.fluid} />
         </div>
-        <div className="each-slide">
+        <div className="slide3">
           <Img fluid={data.art_ideas.childImageSharp.fluid} />
         </div>
       </Slide>

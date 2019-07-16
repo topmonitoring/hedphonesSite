@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-svgr`,
     `gatsby-plugin-styled-components`,
@@ -43,6 +44,7 @@ module.exports = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
+          '@pages': path.resolve(__dirname, 'src/pages'),
           '@components': path.resolve(__dirname, 'src/components'),
           '@common': path.resolve(__dirname, 'src/components/common'),
           '@images': path.resolve(__dirname, 'src/images'),

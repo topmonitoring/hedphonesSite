@@ -23,7 +23,7 @@ const SocialMediaLinks = () => (
     <AddFontAwesomeIcons />
 
     {SOCIAL.map(({ icon, link }) => (
-      <ExternalLink href={link}>
+      <ExternalLink href={link} key={icon}>
         <i
           className={icon}
           alt="link"
