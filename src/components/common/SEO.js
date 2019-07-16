@@ -2,13 +2,13 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 const SEO_DATA = {
-  description: 'An absurd gatsby starter',
-  title: 'Absurd',
+  description: 'An SinglePage gatsby ecomerse site',
+  title: 'Audiotechnika',
   url: '',
-  author: 'ajayns',
-  keywords: ['gatsby', 'site', 'absurd'],
+  author: 'dobrin_dobrev',
+  keywords: ['gatsby', 'site', 'audiotechnika', 'hedphones'],
   twitter: {
-    id: '@ajayns08',
+    id: '@iamdobri',
     img: '',
   },
   facebook: {
