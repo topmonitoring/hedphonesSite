@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollspy from 'react-scrollspy';
+import AddFontAwesomeIcons from '@components/common/AddFontAwesomeIcons';
+import ExternalLink from '@common/ExternalLink';
 
 import { Container } from '@components/global';
 import {
@@ -16,6 +18,20 @@ import {
 import { ReactComponent as MenuIcon } from '@static/icons/menu.svg';
 
 const NAV_ITEMS = ['About', 'Video', 'Buynow', 'FAQ', 'Contact'];
+
+const CartIcon = () => (
+  <ExternalLink href="https://www.gatsbyjs.org/packages/gatsby-plugin-sass/">
+    <i
+      className="fas fa-cart-plus"
+      alt="cart icon"
+      style={{
+        fontSize: '27px',
+        padding: '10px',
+        color: 'black',
+      }}
+    />
+  </ExternalLink>
+);
 
 class Navbar extends Component {
   state = {
@@ -58,6 +74,7 @@ class Navbar extends Component {
 
     return (
       <Nav {...this.props}>
+        <AddFontAwesomeIcons />
         <StyledContainer>
           <Brand>Audiotechnika</Brand>
           <Mobile>
@@ -67,6 +84,7 @@ class Navbar extends Component {
           </Mobile>
 
           <Mobile hide>{this.getNavList({})}</Mobile>
+          <CartIcon />
         </StyledContainer>
         <Mobile>
           {mobileMenuOpen && (
