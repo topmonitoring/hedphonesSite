@@ -4,6 +4,10 @@ An absurd Gatsby starter. The collection of illustrations, [absurd.design](https
 
 [Live Demo](https://gatsby-absurd.netlify.com/)
 
+## Live Preview on netlify
+
+https://infallible-neumann-ed45f1.netlify.com/
+
 ## Installation
 
 Install the dependencies:
