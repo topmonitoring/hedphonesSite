@@ -20,6 +20,7 @@ const SEO_DATA = {
 const SEO = () => {
   return (
     <Helmet>
+      <script src="https://kit.fontawesome.com/e29a0bf6b9.js" />
       <meta property="fb:app_id" content={SEO_DATA.facebook.id} />
       <meta property="og:title" content={SEO_DATA.title} />
       <meta property="og:type" content="website" />

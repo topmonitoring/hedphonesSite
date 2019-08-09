@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import SilideShow from '@components/common/SlideShow';
+import SilideShow from '../SlideShow';
 
-import { Container } from '@components/global';
+import { Container } from '../../components/globalSectionContainer';
 
 const Header = () => (
   <HeaderWrapper>

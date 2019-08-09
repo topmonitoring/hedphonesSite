@@ -1,8 +1,8 @@
 import React from 'react';
 import { navigate } from 'gatsby-link';
-import { Section } from '@components/global';
+import { Section } from '../../components/globalSectionContainer';
 import styled from 'styled-components';
-import SocialMediaLinks from '@components/common/SocialMediaLinks';
+import SocialMediaLinks from '../SocialMediaLinks';
 
 function encode(data) {
   return Object.keys(data)

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Section, Container } from '@components/global';
+import { Section, Container } from '../../components/globalSectionContainer';
 
-import FaqItem from '@common/FaqItem';
-import ExternalLink from '@common/ExternalLink';
+import FaqItem from '../FaqItem';
+import ExternalLink from '../ExternalLink';
 
 const FAQS = [
   {

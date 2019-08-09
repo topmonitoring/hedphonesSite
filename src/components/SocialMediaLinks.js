@@ -1,5 +1,4 @@
-import AddFontAwesomeIcons from '@components/common/AddFontAwesomeIcons';
-import ExternalLink from '@common/ExternalLink';
+import ExternalLink from '../components/ExternalLink';
 
 import React from 'react';
 
@@ -20,8 +19,6 @@ const SOCIAL = [
 
 const SocialMediaLinks = () => (
   <div>
-    <AddFontAwesomeIcons />
-
     {SOCIAL.map(({ icon, link }) => (
       <ExternalLink href={link} key={icon}>
         <i

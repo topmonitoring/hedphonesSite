@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Layout from '@common/Layout';
-import { Container } from '@components/global';
+import Layout from '../components/Layout/Layout';
+import { Container } from '../components/globalSectionContainer';
 
 const NotFoundPage = () => (
   <Layout>

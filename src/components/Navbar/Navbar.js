@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollspy from 'react-scrollspy';
-import AddFontAwesomeIcons from '@components/common/AddFontAwesomeIcons';
-import ExternalLink from '@common/ExternalLink';
+import ExternalLink from '../ExternalLink';
 
-import { Container } from '@components/global';
+import { Container } from '../../components/globalSectionContainer';
 import {
   Nav,
   NavItem,
@@ -15,7 +14,7 @@ import {
   Mobile,
 } from './style';
 
-import { ReactComponent as MenuIcon } from '@static/icons/menu.svg';
+import { ReactComponent as MenuIcon } from '../../../static/icons/menu.svg';
 
 const NAV_ITEMS = ['About', 'Video', 'Buynow', 'FAQ', 'Contact'];
 
@@ -74,7 +73,6 @@ class Navbar extends Component {
 
     return (
       <Nav {...this.props}>
-        <AddFontAwesomeIcons />
         <StyledContainer>
           <Brand>Audiotechnika</Brand>
           <Mobile>

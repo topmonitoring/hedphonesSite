@@ -3,42 +3,36 @@ import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import { Section, Container } from '@components/global';
+import { Section, Container } from '../../components/globalSectionContainer';
 
-const TEAM = [
+const ITEM_COLLECTION = [
   {
     name: 'Ергономичен дизайн',
     image: '1.jpg',
-    //  role: 'Founder',
   },
   {
     name: 'Малки и удобни',
     image: '2.jpeg',
-    //role: 'Art Director',
   },
   {
     name: 'Зарядна станция',
     image: '3.jpg',
-    //role: 'Frontend Engineer',
   },
   {
     name: 'Blutooth технология',
     image: '4.jpg',
-    //role: 'Designer',
   },
   {
     name: 'Малък размер',
     image: '5.jpg',
-    //role: 'Backend Engineer',
   },
   {
     name: 'Елегантен дизайн',
     image: '6.jpg',
-    // role: 'Marketing',
   },
 ];
 
-const Team = () => (
+const WhyToBuy = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -72,8 +66,8 @@ const Team = () => (
       >
         <Container style={{ position: 'relative' }}>
           <h1>Защо да купим</h1>
-          <TeamGrid>
-            {TEAM.map(({ name, image, role }) => {
+          <ItemsmGrid>
+            {ITEM_COLLECTION.map(({ name, image }) => {
               const img = data.allFile.edges.find(
                 ({ node }) => node.relativePath === image
               ).node;
@@ -82,11 +76,10 @@ const Team = () => (
                 <div>
                   <Img fluid={img.childImageSharp.fluid} alt={name} />
                   <Title>{name}</Title>
-                  <Subtitle>{role}</Subtitle>
                 </div>
               );
             })}
-          </TeamGrid>
+          </ItemsmGrid>
           <Art>
             <Img fluid={data.art_team.childImageSharp.fluid} />
           </Art>
@@ -99,7 +92,7 @@ const Team = () => (
   />
 );
 
-const TeamGrid = styled.div`
+const ItemsmGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   grid-template-rows: min-content;
@@ -155,9 +148,4 @@ const Title = styled.p`
   color: ${props => props.theme.color.black.regular};
 `;
 
-const Subtitle = styled.p`
-  ${props => props.theme.font_size.small};
-  color: ${props => props.theme.color.black.light};
-`;
-
-export default Team;
+export default WhyToBuy;

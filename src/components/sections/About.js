@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import { Section, Container } from '@components/global';
+import { Section, Container } from '../../components/globalSectionContainer';
 
 const About = () => (
   <StaticQuery

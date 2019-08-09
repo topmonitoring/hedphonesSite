@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
-import { Section } from '@components/global';
-import '@styles/buynow.scss';
+import { Section } from '../../components/globalSectionContainer';
 
 const BackgroundSection = ({ className }) => (
   <StaticQuery

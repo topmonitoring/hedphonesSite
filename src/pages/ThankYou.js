@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Layout from '@common/Layout';
-import Footer from '@sections/Footer';
+import Layout from '../components/Layout';
+import Footer from '../components/sections/Footer';
 import styled from 'styled-components';
 
 const ThankYouPage = () => (

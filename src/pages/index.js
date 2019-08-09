@@ -1,16 +1,16 @@
 import React from 'react';
 
-import Layout from '@common/Layout';
-import Navbar from '@common/Navbar';
+import Layout from '../components/Layout/Layout';
+import Navbar from '../components/Navbar';
 
-import Header from '@sections/Header';
-import About from '@sections/About';
-import Team from '@sections/Team';
-import Faq from '@sections/Faq';
-import Contact from '@sections/Contact';
-import Footer from '@sections/Footer';
-import BuyNow from '@sections/BuyNow';
-import Video from '@sections/Video';
+import Header from '../components/sections/Header';
+import About from '../components/sections/About';
+import WhyToBuy from '../components/sections/WhyToBuy';
+import Faq from '../components/sections/Faq';
+import Contact from '../components/sections/Contact';
+import Footer from '../components/sections/Footer';
+import BuyNow from '../components/sections/BuyNow';
+import Video from '../components/sections/Video';
 
 const IndexPage = () => (
   <Layout>
@@ -18,7 +18,7 @@ const IndexPage = () => (
     <Header />
     <About />
     <Video />
-    <Team />
+    <WhyToBuy />
     <BuyNow />
     <Faq />
     <Contact />

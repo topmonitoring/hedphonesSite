@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import { Container } from '@components/global';
-import ExternalLink from '@common/ExternalLink';
-import SocialMediaLinks from '@components/common/SocialMediaLinks';
+import { Container } from '../../components/globalSectionContainer';
+import ExternalLink from '../ExternalLink';
+import SocialMediaLinks from '../SocialMediaLinks';
 
 const Footer = () => (
   <StaticQuery
