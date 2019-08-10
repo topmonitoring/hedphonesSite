@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 import { Section } from '../../components/globalSectionContainer';
-import PopUp from '../pop';
+import PopUp from '../ModalPopUp/ModalPopUp';
 
 const BackgroundSection = ({ className }) => (
   <StaticQuery
