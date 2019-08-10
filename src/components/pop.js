@@ -1,49 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import ReactModal from 'react-modal';
 import { Link } from 'gatsby';
 
 ReactModal.setAppElement('#___gatsby');
 
-class PopUp extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false,
-    };
-  }
-  handleModalOpen = event => {
-    // console.log('handleModalOpen: ', event);
-    this.setState({ isModalOpen: true });
+const PopUp = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleModalOpen = event => {
+    setIsModalOpen(true);
   };
 
-  handleModalClose = event => {
-    // console.log('handleModalOpen: ', event);
-    this.setState({ isModalOpen: false });
+  const handleModalClose = event => {
+    setIsModalOpen(false);
   };
 
-  render() {
-    return (
-      <>
-        <div id="main">
-          <h1>Hi people</h1>
-          <p>Welcome to your new Gatsby site.</p>
-          <p>Now go build something great.</p>
-
-          <Link to="#" onClick={this.handleModalOpen}>
-            Donate Now
-          </Link>
-        </div>
-        <ReactModal
-          isOpen={this.state.isModalOpen}
-          onRequestClose={this.handleModalClose}
-          contentLabel="Example Modal In Gatsby"
-        >
-          <h2>Donate</h2>
-          <button onClick={this.handleModalClose}>Close Modal</button>
-        </ReactModal>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <div id="main">
+        <Link to="#" onClick={handleModalOpen}>
+          Open Modal
+        </Link>
+      </div>
+      <ReactModal
+        isOpen={isModalOpen}
+        onRequestClose={handleModalClose}
+        contentLabel="Example Modal In Gatsby"
+      >
+        <h2>MY modal Content</h2>
+        <button onClick={handleModalClose}>Close Modal</button>
+      </ReactModal>
+    </>
+  );
+};
 
 export default PopUp;

@@ -1,8 +1,8 @@
-import React from 'react';
-import { navigate } from 'gatsby-link';
+import React, { useState } from 'react';
 import { Section } from '../../components/globalSectionContainer';
 import styled from 'styled-components';
 import SocialMediaLinks from '../SocialMediaLinks';
+import { navigate } from 'gatsby-link';
 
 function encode(data) {
   return Object.keys(data)
@@ -10,17 +10,14 @@ function encode(data) {
     .join('&');
 }
 
-export default class Index extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { isValidated: false };
-  }
+const Contact = () => {
+  const [isValidated, SetIsValidated] = useState(false);
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+  const handleChange = e => {
+    SetIsValidated({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
     fetch('/', {
@@ -28,106 +25,104 @@ export default class Index extends React.Component {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
         'form-name': form.getAttribute('name'),
-        ...this.state,
+        ...isValidated,
       }),
     })
       .then(() => navigate(form.getAttribute('action')))
       .catch(error => alert(error));
   };
 
-  render() {
-    return (
-      <Section id="contact" accent>
-        <form
-          name="contact"
-          method="post"
-          action="/ThankYou/"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit={this.handleSubmit}
-        >
-          {/*uses reactHelmet to add fontasome pack dependancy*/}
-          <Center>
-            <h1>Контакти</h1>
-            <p>
-              Искате да кажете здравей или просто имате още въпроси? Последвайте
-              ни в соцялните мрежи за нови промоций и оферти, или ни пратете
-              съобщение и ние ще се свържем с вас.
-            </p>
-            <SocialMediaLinks />
-          </Center>
-          <FormGrid>
-            {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-            <input type="hidden" name="form-name" value="contact" />
-            <div hidden>
-              <label>
-                Don’t fill this out:{' '}
-                <input name="bot-field" onChange={this.handleChange} />
-              </label>
-            </div>
+  return (
+    <Section id="contact" accent>
+      <form
+        name="contact"
+        method="post"
+        action="/ThankYou/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
+        {/*netlify encoded form to use with snap feture to send to email via netlyfy's backend*/}
+        <Center>
+          <h1>Контакти</h1>
+          <p>
+            Искате да кажете здравей или просто имате още въпроси? Последвайте
+            ни в соцялните мрежи за нови промоций и оферти, или ни пратете
+            съобщение и ние ще се свържем с вас.
+          </p>
+          <SocialMediaLinks />
+        </Center>
+        <FormGrid>
+          {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+          <input type="hidden" name="form-name" value="contact" />
+          <div hidden>
+            <label>
+              Don’t fill this out: <input name="bot-field" />
+            </label>
+          </div>
 
-            <div className="field">
-              <div className="control">
-                <input
-                  className="input"
-                  type={'text'}
-                  name={'name'}
-                  onChange={this.handleChange}
-                  id={'name'}
-                  required={true}
-                  placeholder={'Your name'}
-                  style={{ gridArea: 'name', width: '100%' }}
-                />
-              </div>
+          <div className="field">
+            <div className="control">
+              <input
+                className="input"
+                type={'text'}
+                name={'name'}
+                onChange={handleChange}
+                id={'name'}
+                required={true}
+                placeholder={'Your name'}
+                style={{ gridArea: 'name', width: '100%' }}
+              />
             </div>
+          </div>
 
-            <div className="field">
-              <div className="control">
-                <input
-                  className="input"
-                  type={'email'}
-                  name={'email'}
-                  onChange={this.handleChange}
-                  id={'email'}
-                  required={true}
-                  placeholder={'Your e-mail'}
-                  style={{ gridArea: 'email', width: '100%' }}
-                />
-              </div>
+          <div className="field">
+            <div className="control">
+              <input
+                className="input"
+                type={'email'}
+                name={'email'}
+                onChange={handleChange}
+                id={'email'}
+                required={true}
+                placeholder={'Your e-mail'}
+                style={{ gridArea: 'email', width: '100%' }}
+              />
             </div>
+          </div>
 
-            <div
-              className="field"
-              style={{
-                gridArea: 'message',
-              }}
-            >
-              <div className="control">
-                <textarea
-                  className="textarea"
-                  name={'message'}
-                  onChange={this.handleChange}
-                  id={'message'}
-                  required={true}
-                  placeholder={'Message'}
-                  style={{
-                    width: '100%',
-                    height: '150px',
-                  }}
-                />
-              </div>
+          <div
+            className="field"
+            style={{
+              gridArea: 'message',
+            }}
+          >
+            <div className="control">
+              <textarea
+                className="textarea"
+                name={'message'}
+                onChange={handleChange}
+                id={'message'}
+                required={true}
+                placeholder={'Message'}
+                style={{
+                  width: '100%',
+                  height: '150px',
+                }}
+              />
             </div>
-            <div className="field" style={{ gridArea: 'button' }}>
-              <button className="button is-link" type="submit">
-                Send
-              </button>
-            </div>
-          </FormGrid>
-        </form>
-      </Section>
-    );
-  }
-}
+          </div>
+          <div className="field" style={{ gridArea: 'button' }}>
+            <button className="button is-link" type="submit">
+              Send
+            </button>
+          </div>
+        </FormGrid>
+      </form>
+    </Section>
+  );
+};
+
 const FormGrid = styled.div`
   text-align: center;
   margin: auto;
@@ -149,3 +144,4 @@ const Center = styled.div`
   width: 40%;
   padding: 10px;
 `;
+export default Contact;
