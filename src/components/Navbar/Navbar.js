@@ -25,9 +25,7 @@ const Navbar = () => {
   const { hidden } = useContext(CartContext);
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(prevState => ({
-      mobileMenuOpen: !prevState.mobileMenuOpen,
-    }));
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   const closeMobileMenu = () => {
