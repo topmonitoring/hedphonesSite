@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { useState, useContext } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollspy from 'react-scrollspy';
-import ExternalLink from '../ExternalLink';
-
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import { CartContext } from '../../providers/cart.context';
 import { Container } from '../../components/globalSectionContainer';
 import {
   Nav,
@@ -12,48 +13,36 @@ import {
   NavListWrapper,
   MobileMenu,
   Mobile,
-} from './style';
+} from './Navbar.style.js';
 
 import { ReactComponent as MenuIcon } from '../../../static/icons/menu.svg';
 
 const NAV_ITEMS = ['About', 'Video', 'Buynow', 'FAQ', 'Contact'];
 
-const CartIcon = () => (
-  <ExternalLink href="https://www.gatsbyjs.org/packages/gatsby-plugin-sass/">
-    <i
-      className="fas fa-cart-plus"
-      alt="cart icon"
-      style={{
-        fontSize: '27px',
-        padding: '10px',
-        color: 'black',
-      }}
-    />
-  </ExternalLink>
-);
+const Navbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-class Navbar extends Component {
-  state = {
-    mobileMenuOpen: false,
+  const { hidden } = useContext(CartContext);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(prevState => ({
+      mobileMenuOpen: !prevState.mobileMenuOpen,
+    }));
   };
 
-  toggleMobileMenu = () => {
-    this.setState(prevState => ({ mobileMenuOpen: !prevState.mobileMenuOpen }));
-  };
-
-  closeMobileMenu = () => {
-    if (this.state.mobileMenuOpen) {
-      this.setState({ mobileMenuOpen: false });
+  const closeMobileMenu = () => {
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
     }
   };
 
-  getNavAnchorLink = item => (
-    <AnchorLink href={`#${item.toLowerCase()}`} onClick={this.closeMobileMenu}>
+  const getNavAnchorLink = item => (
+    <AnchorLink href={`#${item.toLowerCase()}`} onClick={closeMobileMenu}>
       {item}
     </AnchorLink>
   );
 
-  getNavList = ({ mobile = false }) => (
+  const getNavList = ({ mobile = false }) => (
     <NavListWrapper mobile={mobile}>
       <Scrollspy
         items={NAV_ITEMS.map(item => item.toLowerCase())}
@@ -62,38 +51,34 @@ class Navbar extends Component {
         offset={-64}
       >
         {NAV_ITEMS.map(navItem => (
-          <NavItem key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
+          <NavItem key={navItem}>{getNavAnchorLink(navItem)}</NavItem>
         ))}
       </Scrollspy>
     </NavListWrapper>
   );
 
-  render() {
-    const { mobileMenuOpen } = this.state;
-
-    return (
-      <Nav {...this.props}>
-        <StyledContainer>
-          <Brand>Audiotechnika</Brand>
-          <Mobile>
-            <button onClick={this.toggleMobileMenu} style={{ color: 'black' }}>
-              <MenuIcon />
-            </button>
-          </Mobile>
-
-          <Mobile hide>{this.getNavList({})}</Mobile>
-          <CartIcon />
-        </StyledContainer>
+  return (
+    <Nav {...mobileMenuOpen}>
+      <StyledContainer>
+        <Brand>Audiotechnika</Brand>
         <Mobile>
-          {mobileMenuOpen && (
-            <MobileMenu>
-              <Container>{this.getNavList({ mobile: true })}</Container>
-            </MobileMenu>
-          )}
+          <button onClick={toggleMobileMenu} style={{ color: 'black' }}>
+            <MenuIcon />
+          </button>
         </Mobile>
-      </Nav>
-    );
-  }
-}
+        <Mobile hide>{getNavList({})}</Mobile>
+        <CartIcon />
+        <div>{hidden ? null : <CartDropdown />}</div>
+      </StyledContainer>
+      <Mobile>
+        {mobileMenuOpen && (
+          <MobileMenu>
+            <Container>{getNavList({ mobile: true })}</Container>
+          </MobileMenu>
+        )}
+      </Mobile>
+    </Nav>
+  );
+};
 
 export default Navbar;
