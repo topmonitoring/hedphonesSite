@@ -16,6 +16,15 @@ export const CartDropdownContainer = styled.div`
 
 export const CartDropdownButton = styled.button`
   margin-top: auto;
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 `;
 
 export const EmptyMessageContainer = styled.span`

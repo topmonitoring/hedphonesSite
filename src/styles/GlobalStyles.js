@@ -23,6 +23,13 @@ const GlobalStyles = createGlobalStyle`
   cursor: pointer;
   border-radius: 10%;
 }
+button {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+  }
 
 
   h1, h2, h3, p {
@@ -69,13 +76,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  button {
-    border: none;
-    background: none;
-    outline: none;
-    padding: 0;
-    cursor: pointer;
-  }
+  
 
   a {
     cursor: pointer;

@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollspy from 'react-scrollspy';
-import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { CartContext } from '../../providers/cart.context';
 import { Container } from '../../components/globalSectionContainer';
@@ -15,7 +14,8 @@ import {
   Mobile,
 } from './Navbar.style.js';
 
-import { ReactComponent as MenuIcon } from '../../../static/icons/menu.svg';
+import CartIcon from '../cart-icon/cart-icon.component';
+import { ReactComponent as MobileMenuIcon } from '../../assets/mobile_menu.svg';
 
 const NAV_ITEMS = ['About', 'Video', 'Buynow', 'FAQ', 'Contact'];
 
@@ -61,7 +61,7 @@ const Navbar = () => {
         <Brand>Audiotechnika</Brand>
         <Mobile>
           <button onClick={toggleMobileMenu} style={{ color: 'black' }}>
-            <MenuIcon />
+            <MobileMenuIcon />
           </button>
         </Mobile>
         <Mobile hide>{getNavList({})}</Mobile>
