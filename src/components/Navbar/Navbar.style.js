@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as SiteLogo } from '../../assets/logo2.svg';
+import { ReactComponent as SiteLogo } from '../../assets/favicon.svg';
 import { Container } from '../globalSectionContainer';
 
 export const Nav = styled.nav`
