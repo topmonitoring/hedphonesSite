@@ -7,7 +7,7 @@
 // You can delete this file if you're not using it
 import React from 'react';
 
-import CartProvider from './src/providers/cart.context';
+import CartProvider from './src/providers/cart.provider';
 
 export const wrapRootElement = ({ element }) => (
   <CartProvider>{element}</CartProvider>

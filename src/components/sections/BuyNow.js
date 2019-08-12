@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 import { Section } from '../../components/globalSectionContainer';
+import CollectionPage from '../collection/collection.component';
 
 const BackgroundSection = ({ className }) => (
   <StaticQuery
@@ -67,6 +68,7 @@ const BackgroundSection = ({ className }) => (
                   слушалки, зарядна станция (кутийка) и кабел за зареждане на
                   кутийката от тип (micro usb).
                 </p>
+                <CollectionPage />
                 <button className="button">Добави в количка</button>
               </div>
             </Grid>

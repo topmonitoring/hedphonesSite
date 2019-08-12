@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import PopUp from '../ModalPopUp/ModalPopUp';
-import { CartContext } from '../../providers/cart.context';
+import { CartContext } from '../../providers/cart.provider';
+import CartItem from '../cart-item/cart-item.component';
+import CheckoutPage from '../checkout/checkout.component';
 
 import {
   CartDropdownContainer,
@@ -14,9 +16,15 @@ const CartDropdown = () => {
   return (
     <CartDropdownContainer>
       <CartItemsContainer>
-        <EmptyMessageContainer>Your cart is empty</EmptyMessageContainer>
+        {cartItems.length ? (
+          cartItems.map(cartItem => (
+            <CartItem key={cartItem.id} item={cartItem} />
+          ))
+        ) : (
+          <EmptyMessageContainer>Your cart is empty</EmptyMessageContainer>
+        )}
       </CartItemsContainer>
-      <PopUp content={<h1>ALabala content</h1>}>
+      <PopUp content={<CheckoutPage />}>
         <CartDropdownButton>GO TO CHECKOUT</CartDropdownButton>
       </PopUp>
     </CartDropdownContainer>

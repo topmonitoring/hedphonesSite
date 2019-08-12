@@ -1,0 +1,32 @@
+import React, { useContext } from 'react';
+import { CartContext } from '../../providers/cart.provider';
+
+import {
+  CollectionFooterContainer,
+  CollectionItemContainer,
+  AddToCartButton,
+} from './collection-item.styles.js';
+
+const CollectionItem = ({ item }) => {
+  const { name, price, imageUrl } = item;
+  const { addItem } = useContext(CartContext);
+  return (
+    <CollectionItemContainer>
+      <div
+        className="image"
+        style={{
+          backgroundImage: `url(${imageUrl})`,
+        }}
+      />
+      <CollectionFooterContainer>
+        <span className="name">{name}</span>
+        <span className="price">{price}</span>
+      </CollectionFooterContainer>
+      <AddToCartButton onClick={() => addItem(item)}>
+        Add to cart
+      </AddToCartButton>
+    </CollectionItemContainer>
+  );
+};
+
+export default CollectionItem;

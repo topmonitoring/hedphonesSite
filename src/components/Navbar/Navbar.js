@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollspy from 'react-scrollspy';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
-import { CartContext } from '../../providers/cart.context';
+import { CartContext } from '../../providers/cart.provider';
 import { Container } from '../../components/globalSectionContainer';
 import {
   Nav,
