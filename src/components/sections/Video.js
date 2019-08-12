@@ -46,13 +46,26 @@ const BackgroundSection = ({ className }) => (
               <h1 style={{ gridArea: 'heder', color: 'white' }}>
                 Как работят.?
               </h1>
+              <PopUp
+                content={
+                  <iframe
+                    title="youtube-review"
+                    width="1280"
+                    height="720"
+                    src="https://www.youtube.com/embed/7i6enCs52S8"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                }
+              >
+                <Img
+                  style={{ gridArea: 'img' }}
+                  fluid={data.youtubemocap.childImageSharp.fluid}
+                  alt="youtubemocap"
+                />
+              </PopUp>
 
-              <Img
-                style={{ gridArea: 'img' }}
-                fluid={data.youtubemocap.childImageSharp.fluid}
-                alt="youtubemocap"
-              />
-              <PopUp />
               <p style={{ width: '100%', gridArea: 'text', color: 'black' }}>
                 Слушалките са съвместими както с Android така и IOS операционни
                 системи. А също така и с вички други blutooth предаващи

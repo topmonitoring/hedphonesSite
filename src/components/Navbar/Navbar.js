@@ -7,14 +7,15 @@ import { Container } from '../../components/globalSectionContainer';
 import {
   Nav,
   NavItem,
-  Brand,
   StyledContainer,
   NavListWrapper,
   MobileMenu,
   Mobile,
+  SiteLogoContainer,
 } from './Navbar.style.js';
 
 import CartIcon from '../cart-icon/cart-icon.component';
+
 import { ReactComponent as MobileMenuIcon } from '../../assets/mobile_menu.svg';
 
 const NAV_ITEMS = ['About', 'Video', 'Buynow', 'FAQ', 'Contact'];
@@ -58,15 +59,16 @@ const Navbar = () => {
   return (
     <Nav {...mobileMenuOpen}>
       <StyledContainer>
-        <Brand>Audiotechnika</Brand>
+        <SiteLogoContainer />
+        <div style={{ width: '0px' }}>{hidden ? null : <CartDropdown />}</div>
         <Mobile>
           <button onClick={toggleMobileMenu} style={{ color: 'black' }}>
             <MobileMenuIcon />
           </button>
         </Mobile>
         <Mobile hide>{getNavList({})}</Mobile>
+
         <CartIcon />
-        <div>{hidden ? null : <CartDropdown />}</div>
       </StyledContainer>
       <Mobile>
         {mobileMenuOpen && (

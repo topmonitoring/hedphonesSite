@@ -1,45 +1,27 @@
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
-import { Link } from 'gatsby';
 import { StyledModal, CloseModal, ModalContent } from './modal-pop-up.styles';
 
 ReactModal.setAppElement('#___gatsby');
 
-const PopUp = () => {
+const PopUp = ({ children, content }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleModalOpen = event => {
-    setIsModalOpen(true);
-  };
-
-  const handleModalClose = event => {
-    setIsModalOpen(false);
+  const toogleModal = event => {
+    setIsModalOpen(!isModalOpen);
   };
 
   return (
     <>
-      <div id="main">
-        <Link to="#" onClick={handleModalOpen}>
-          Open Modal
-        </Link>
-      </div>
+      <div onClick={toogleModal}>{children}</div>
+
       <StyledModal
         isOpen={isModalOpen}
-        onRequestClose={handleModalClose}
+        onRequestClose={toogleModal}
         contentLabel="Example Modal In Gatsby"
       >
-        <CloseModal onClick={handleModalClose}>&#10006;</CloseModal>
-        <ModalContent>
-          <iframe
-            title="youtube-review"
-            width="1280"
-            height="720"
-            src="https://www.youtube.com/embed/7i6enCs52S8"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </ModalContent>
+        <CloseModal onClick={toogleModal}>&#10006;</CloseModal>
+        <ModalContent>{content}</ModalContent>
       </StyledModal>
     </>
   );

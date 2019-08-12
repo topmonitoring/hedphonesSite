@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-
+import PopUp from '../ModalPopUp/ModalPopUp';
 import { CartContext } from '../../providers/cart.context';
 
 import {
@@ -16,13 +16,9 @@ const CartDropdown = () => {
       <CartItemsContainer>
         <EmptyMessageContainer>Your cart is empty</EmptyMessageContainer>
       </CartItemsContainer>
-      <CartDropdownButton
-        onClick={() => {
-          toogleHidden();
-        }}
-      >
-        GO TO CHECKOUT
-      </CartDropdownButton>
+      <PopUp content={<h1>ALabala content</h1>}>
+        <CartDropdownButton>GO TO CHECKOUT</CartDropdownButton>
+      </PopUp>
     </CartDropdownContainer>
   );
 };

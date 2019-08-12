@@ -67,7 +67,7 @@ const BackgroundSection = ({ className }) => (
                   слушалки, зарядна станция (кутийка) и кабел за зареждане на
                   кутийката от тип (micro usb).
                 </p>
-                <button className="button">Купи сега</button>
+                <button className="button">Добави в количка</button>
               </div>
             </Grid>
           </BackgroundImage>

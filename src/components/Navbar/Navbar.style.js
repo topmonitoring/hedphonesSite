@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { ReactComponent as SiteLogo } from '../../assets/logo2.svg';
 import { Container } from '../globalSectionContainer';
 
 export const Nav = styled.nav`
@@ -11,10 +11,17 @@ export const Nav = styled.nav`
   z-index: 1000;
 `;
 
+export const SiteLogoContainer = styled(SiteLogo)`
+  width: 96px;
+  height: 32px;
+  display: flex;
+`;
+
 export const StyledContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 `;
 
 export const NavListWrapper = styled.div`
@@ -60,11 +67,6 @@ export const NavItem = styled.li`
 export const MobileMenu = styled.div`
   width: 100%;
   background: ${props => props.theme.color.primary};
-`;
-
-export const Brand = styled.div`
-  font-family: ${props => props.theme.font.primary};
-  ${props => props.theme.font_size.large};
 `;
 
 export const Mobile = styled.div`
