@@ -8,8 +8,6 @@ import {
 } from './cart.utils';
 
 export const CartContext = createContext({
-  hidden: true,
-  toogleHidden: () => {},
   cartItems: [],
   addItem: () => {},
   removeItem: () => {},
@@ -19,14 +17,12 @@ export const CartContext = createContext({
 });
 
 const CartProvider = ({ children }) => {
-  const [hidden, setHidden] = useState(true);
   const [cartItems, setCartItems] = useState([]);
   const [cartItemsCount, setCartItemsCount] = useState(0);
   const [cartItemsTotal, setcartItemsTotal] = useState(0);
 
   const addItem = item => setCartItems(addItemToCart(cartItems, item));
   const removeItem = item => setCartItems(removeItemFromCart(cartItems, item));
-  const toogleHidden = () => setHidden(!hidden);
   const clearItem = item => setCartItems(filterItemFromCart(cartItems, item));
 
   useEffect(
@@ -46,8 +42,6 @@ const CartProvider = ({ children }) => {
   return (
     <CartContext.Provider
       value={{
-        hidden,
-        toogleHidden,
         cartItems,
         addItem,
         removeItem,

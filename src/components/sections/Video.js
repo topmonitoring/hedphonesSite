@@ -94,13 +94,13 @@ const Grid = styled.div`
   width: 100%;
   padding: 80px;
   display: grid;
-  grid-gap: 60px;
-  grid-template-columns: 2fr 1fr 2fr;
+  grid-gap: 150px;
+  grid-template-columns: 2fr 1fr;
   grid-row-gap: 100px;
 
   grid-template-areas:
-    'heder heder heder'
-    'img blank text';
+    'heder  heder'
+    'img  text';
 `;
 
 export default StyledBackgroundSection;

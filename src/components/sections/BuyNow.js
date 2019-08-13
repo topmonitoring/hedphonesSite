@@ -69,7 +69,6 @@ const BackgroundSection = ({ className }) => (
                   кутийката от тип (micro usb).
                 </p>
                 <CollectionPage />
-                <button className="button">Добави в количка</button>
               </div>
             </Grid>
           </BackgroundImage>

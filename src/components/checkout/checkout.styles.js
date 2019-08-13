@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const CheckoutPageContainer = styled.div`
-  width: 55%;
-  min-height: 90vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto 0;
+  margin: 5px auto 0;
+  background-color: white;
+  height: 700px;
+
   button {
     margin-left: auto;
     margin-top: 50px;
@@ -31,7 +33,7 @@ export const HeaderBlockContainer = styled.div`
     width: 8%;
   }
   @media screen and (max-width: 800px) {
-    width: 22%
+    width: 22%;
     &:last-child {
       width: 12%;
     }

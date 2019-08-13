@@ -17,7 +17,6 @@ const modal = css``;
 export const StyledModal = styled(ReactModal)`
   height: 700px;
   width: 80%;
-  text-align: center;
   margin: auto;
   width: 60%;
   margin-top: 130px;

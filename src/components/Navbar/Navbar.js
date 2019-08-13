@@ -1,9 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollspy from 'react-scrollspy';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component';
-import { CartContext } from '../../providers/cart.provider';
 import { Container } from '../../components/globalSectionContainer';
+
 import {
   Nav,
   NavItem,
@@ -22,8 +21,6 @@ const NAV_ITEMS = ['About', 'Video', 'Buynow', 'FAQ', 'Contact'];
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const { hidden } = useContext(CartContext);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -60,7 +57,6 @@ const Navbar = () => {
     <Nav {...mobileMenuOpen}>
       <StyledContainer>
         <SiteLogoContainer />
-        <div style={{ width: '0px' }}>{hidden ? null : <CartDropdown />}</div>
         <Mobile>
           <button onClick={toggleMobileMenu} style={{ color: 'black' }}>
             <MobileMenuIcon />

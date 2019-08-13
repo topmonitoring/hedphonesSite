@@ -29,13 +29,17 @@ export const CollectionItemContainer = styled.div`
 `;
 
 export const AddToCartButton = styled.button`
-  .button {
-    width: 80%;
-    opacity: 0.7;
-    position: absolute;
-    top: 255px;
-    display: none;
-  }
+  background-color: rgb(141, 8, 8);
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10%;
 `;
 
 export const CollectionFooterContainer = styled.div`
@@ -44,6 +48,7 @@ export const CollectionFooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+  background-color: white;
 
   .name {
     width: 90%;

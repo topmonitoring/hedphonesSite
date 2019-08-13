@@ -23,7 +23,7 @@ const CollectionItem = ({ item }) => {
         <span className="price">{price}</span>
       </CollectionFooterContainer>
       <AddToCartButton onClick={() => addItem(item)}>
-        Add to cart
+        Добави в количка
       </AddToCartButton>
     </CollectionItemContainer>
   );

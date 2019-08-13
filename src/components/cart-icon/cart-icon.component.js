@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../providers/cart.provider';
+import CheckoutPage from '../checkout/checkout.component';
+import PopUp from '../ModalPopUp/ModalPopUp';
 import {
   CartIconContainer,
   ItemCountContainer,
@@ -7,13 +9,15 @@ import {
 } from './cart-icon.styles';
 
 const CartIcon = () => {
-  const { toogleHidden, cartItemsCount } = useContext(CartContext);
+  const { cartItemsCount } = useContext(CartContext);
 
   return (
-    <CartIconContainer onClick={toogleHidden}>
-      <ShoppingIconContainer />
-      <ItemCountContainer>{cartItemsCount}</ItemCountContainer>
-    </CartIconContainer>
+    <PopUp content={<CheckoutPage />}>
+      <CartIconContainer>
+        <ShoppingIconContainer />
+        <ItemCountContainer>{cartItemsCount}</ItemCountContainer>
+      </CartIconContainer>
+    </PopUp>
   );
 };
 
