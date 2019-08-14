@@ -19,6 +19,13 @@ module.exports = {
         path: `${__dirname}/src/images/art`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `slides`,
+        path: `${__dirname}/src/images/slides`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

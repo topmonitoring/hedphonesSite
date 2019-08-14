@@ -3,13 +3,40 @@ import { Slide } from 'react-slideshow-image';
 import Img from 'gatsby-image';
 import { StaticQuery, graphql } from 'gatsby';
 
+const SLIDESHOW = [
+  {
+    image: 'slide1',
+    id: 1,
+  },
+  {
+    image: 'slide2',
+    id: 2,
+  },
+  {
+    image: 'slide3',
+    id: 3,
+  },
+];
+
 const SlideShow = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_fast: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "slide11" }
+        allFile(filter: { sourceInstanceName: { eq: "slides" } }) {
+          edges {
+            node {
+              relativePath
+              childImageSharp {
+                fluid(maxWidth: 1366, maxHeight: 650) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        slide1: file(
+          sourceInstanceName: { eq: "slides" }
+          name: { eq: "slide1" }
         ) {
           childImageSharp {
             fluid(maxWidth: 1366, maxHeight: 650) {
@@ -18,9 +45,9 @@ const SlideShow = () => (
           }
         }
 
-        art_learn: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "slide22" }
+        slide2: file(
+          sourceInstanceName: { eq: "slides" }
+          name: { eq: "slide2" }
         ) {
           childImageSharp {
             fluid(maxWidth: 1366, maxHeight: 650) {
@@ -29,9 +56,9 @@ const SlideShow = () => (
           }
         }
 
-        art_ideas: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "slide33" }
+        slide3: file(
+          sourceInstanceName: { eq: "slides" }
+          name: { eq: "slide3" }
         ) {
           childImageSharp {
             fluid(maxWidth: 1366, maxHeight: 650) {
@@ -44,13 +71,13 @@ const SlideShow = () => (
     render={data => (
       <Slide {...properties}>
         <div className="slide1">
-          <Img fluid={data.art_fast.childImageSharp.fluid} />
+          <Img fluid={data.slide1.childImageSharp.fluid} />
         </div>
         <div className="slide2">
-          <Img fluid={data.art_learn.childImageSharp.fluid} />
+          <Img fluid={data.slide2.childImageSharp.fluid} />
         </div>
         <div className="slide3">
-          <Img fluid={data.art_ideas.childImageSharp.fluid} />
+          <Img fluid={data.slide3.childImageSharp.fluid} />
         </div>
       </Slide>
     )}

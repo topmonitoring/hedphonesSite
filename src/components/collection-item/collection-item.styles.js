@@ -9,7 +9,7 @@ export const CollectionItemContainer = styled.div`
   position: relative;
 
   .image {
-    width: 100%;
+    width: 70%;
     height: 95%;
     background-size: cover;
     background-position: center;
@@ -18,7 +18,7 @@ export const CollectionItemContainer = styled.div`
 
   &:hover {
     .image {
-      opacity: 0.8;
+      background-position-y: -20px;
     }
 
     .button {
@@ -28,22 +28,8 @@ export const CollectionItemContainer = styled.div`
   }
 `;
 
-export const AddToCartButton = styled.button`
-  background-color: rgb(141, 8, 8);
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 10%;
-`;
-
 export const CollectionFooterContainer = styled.div`
-  width: 100%;
+  width: 70%;
   height: 5%;
   display: flex;
   justify-content: space-between;

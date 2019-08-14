@@ -22,9 +22,9 @@ const CollectionItem = ({ item }) => {
         <span className="name">{name}</span>
         <span className="price">{price}</span>
       </CollectionFooterContainer>
-      <AddToCartButton onClick={() => addItem(item)}>
+      <button className="button" onClick={() => addItem(item)}>
         Добави в количка
-      </AddToCartButton>
+      </button>
     </CollectionItemContainer>
   );
 };
