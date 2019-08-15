@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: ${props => props.theme.font.secondary};
   }
-  .button {
+  button {
   background-color: rgb(141, 8, 8);
   border: none;
   color: white;
@@ -23,19 +23,12 @@ const GlobalStyles = createGlobalStyle`
   cursor: pointer;
   border-radius: 10%;
 }
-button {
-    border: none;
-    background: none;
-    outline: none;
-    padding: 0;
-    cursor: pointer;
-  }
-
 
   h1, h2, h3, p {
     margin: 0;
-    font-weight: normal;
+    font-weight: normal;    
   }
+  
 
   h1, h2 {
     font-family: ${props => props.theme.font.primary};

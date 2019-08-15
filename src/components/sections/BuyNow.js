@@ -6,6 +6,8 @@ import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 import { Section } from '../../components/globalSectionContainer';
 import CollectionPage from '../collection/collection.component';
+import 'animate.css/animate.min.css';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const BackgroundSection = ({ className }) => (
   <StaticQuery
@@ -42,7 +44,13 @@ const BackgroundSection = ({ className }) => (
             backgroundColor={`#040e18`}
           >
             <Grid>
-              <h1 style={{ gridArea: 'heder', color: 'white' }}>Купи сега</h1>
+              <ScrollAnimation
+                animateIn="flipInY"
+                animateOut="flipOutY"
+                style={{ gridArea: 'heder', color: 'white' }}
+              >
+                <h1>Купи сега</h1>
+              </ScrollAnimation>
 
               <Img
                 style={{ gridArea: 'img' }}
@@ -55,19 +63,24 @@ const BackgroundSection = ({ className }) => (
                   gridArea: 'text',
                 }}
               >
-                <p
-                  style={{
-                    width: '100%',
-                    color: 'white',
-                    textColor: 'white',
-                  }}
+                <ScrollAnimation
+                  animateIn="bounceInRight"
+                  animateOut="bounceOutLeft"
                 >
-                  Слушалките са съвместими както с Android така и IOS
-                  операционни системи. А също така и с вички други blutooth
-                  предаващи устроиства. В конплекта са включени 2 безжични
-                  слушалки, зарядна станция (кутийка) и кабел за зареждане на
-                  кутийката от тип (micro usb).
-                </p>
+                  <p
+                    style={{
+                      width: '100%',
+                      color: 'white',
+                      textColor: 'white',
+                    }}
+                  >
+                    Слушалките са съвместими както с Android така и IOS
+                    операционни системи. А също така и с вички други blutooth
+                    предаващи устроиства. В конплекта са включени 2 безжични
+                    слушалки, зарядна станция (кутийка) и кабел за зареждане на
+                    кутийката от тип (micro usb).
+                  </p>
+                </ScrollAnimation>
                 <CollectionPage />
               </div>
             </Grid>

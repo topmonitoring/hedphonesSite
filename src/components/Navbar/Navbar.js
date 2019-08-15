@@ -58,9 +58,9 @@ const Navbar = () => {
       <StyledContainer>
         <SiteLogoContainer />
         <Mobile>
-          <button onClick={toggleMobileMenu} style={{ color: 'black' }}>
+          <div onClick={toggleMobileMenu} style={{ color: 'black' }}>
             <MobileMenuIcon />
-          </button>
+          </div>
         </Mobile>
         <Mobile hide>{getNavList({})}</Mobile>
 

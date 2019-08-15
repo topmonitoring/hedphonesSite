@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import CheckoutItem from '../checkout-item/checkout-item.component';
 import { CartContext } from '../../providers/cart.provider';
+import styled from 'styled-components';
 
 import {
   CheckoutPageContainer,
@@ -41,19 +42,17 @@ const CheckoutPage = () => {
         <br />
         4242 4242 4242 4242 - Exp: 01/20 - CVV: 123
       </WarningContainer>
-      <p>Изберете начин на плащане:</p>
-
-      <div>
-        <input type="radio" name="payment" value="Наложен платеж" />
-        Наложен платеж
-      </div>
-      <div>
-        <input type="radio" name="payment" value="Кредитна карта" />
-        Кредитна карта
-      </div>
-      <button className="button">CLICK HERE TO BUY</button>
+      <CheckoutButton>Плати с карта</CheckoutButton>
+      <CheckoutButton>Плати с наложен платеж</CheckoutButton>
     </CheckoutPageContainer>
   );
 };
 
 export default CheckoutPage;
+
+const CheckoutButton = styled.button`
+  width: 40vw;
+  background-color: green;
+  margin: 0px;
+  border-radius: 0;
+`;

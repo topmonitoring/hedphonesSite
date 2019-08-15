@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const CollectionItemContainer = styled.div`
-  width: 22vw;
+  width: 16vw;
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 500px;
   align-items: center;
   position: relative;
 
   .image {
-    width: 70%;
+    width: 95%;
     height: 95%;
     background-size: cover;
     background-position: center;
@@ -18,7 +18,7 @@ export const CollectionItemContainer = styled.div`
 
   &:hover {
     .image {
-      background-position-y: -20px;
+      opacity: 0.85;
     }
 
     .button {
@@ -29,7 +29,7 @@ export const CollectionItemContainer = styled.div`
 `;
 
 export const CollectionFooterContainer = styled.div`
-  width: 70%;
+  width: 95%;
   height: 5%;
   display: flex;
   justify-content: space-between;

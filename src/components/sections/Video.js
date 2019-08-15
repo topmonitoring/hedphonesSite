@@ -6,6 +6,8 @@ import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 import { Section } from '../../components/globalSectionContainer';
 import PopUp from '../ModalPopUp/ModalPopUp';
+import 'animate.css/animate.min.css';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const BackgroundSection = ({ className }) => (
   <StaticQuery
@@ -43,9 +45,13 @@ const BackgroundSection = ({ className }) => (
             backgroundColor={`#040e18`}
           >
             <Grid>
-              <h1 style={{ gridArea: 'heder', color: 'white' }}>
-                Как работят.?
-              </h1>
+              <ScrollAnimation
+                animateIn="flipInY"
+                animateOut="flipOutY"
+                style={{ gridArea: 'heder', color: 'white' }}
+              >
+                <h1>Как работят.?</h1>
+              </ScrollAnimation>
               <PopUp
                 content={
                   <iframe
@@ -65,14 +71,18 @@ const BackgroundSection = ({ className }) => (
                   alt="youtubemocap"
                 />
               </PopUp>
-
-              <p style={{ width: '100%', gridArea: 'text', color: 'black' }}>
-                Слушалките са съвместими както с Android така и IOS операционни
-                системи. А също така и с вички други blutooth предаващи
-                устроиства. В конплекта са включени 2 безжични слушалки, зарядна
-                станция (кутийка) и кабел за зареждане на кутийката от тип
-                (micro usb).
-              </p>
+              <ScrollAnimation
+                animateIn="fadeIn"
+                style={{ width: '100%', gridArea: 'text', color: 'black' }}
+              >
+                <p>
+                  Слушалките са съвместими както с Android така и IOS
+                  операционни системи. А също така и с вички други blutooth
+                  предаващи устроиства. В конплекта са включени 2 безжични
+                  слушалки, зарядна станция (кутийка) и кабел за зареждане на
+                  кутийката от тип (micro usb).
+                </p>
+              </ScrollAnimation>
             </Grid>
           </BackgroundImage>
         </Section>

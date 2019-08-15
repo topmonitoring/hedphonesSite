@@ -20,7 +20,9 @@ const PopUp = ({ children, content }) => {
         onRequestClose={toogleModal}
         contentLabel="Example Modal In Gatsby"
       >
-        <CloseModal onClick={toogleModal}>&#10006;</CloseModal>
+        <CloseModal onClick={toogleModal}>
+          <div>&#10006;</div>
+        </CloseModal>
         <ModalContent>{content}</ModalContent>
       </StyledModal>
     </>

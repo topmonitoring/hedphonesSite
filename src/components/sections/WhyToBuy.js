@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import 'animate.css/animate.min.css';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import { Section, Container } from '../../components/globalSectionContainer';
 
@@ -65,7 +67,9 @@ const WhyToBuy = () => (
         id="why to buy" //accent="secondary"
       >
         <Container style={{ position: 'relative' }}>
-          <h1>Защо да купим</h1>
+          <ScrollAnimation animateIn="fadeIn">
+            <h1>Защо да купим</h1>
+          </ScrollAnimation>
           <ItemsmGrid>
             {ITEM_COLLECTION.map(({ name, image }) => {
               const img = data.allFile.edges.find(
@@ -74,8 +78,11 @@ const WhyToBuy = () => (
 
               return (
                 <div key={name}>
-                  <Img fluid={img.childImageSharp.fluid} alt={name} />
-                  <Title>{name}</Title>
+                  <ScrollAnimation animateIn="fadeIn" duration={5}>
+                    <Img fluid={img.childImageSharp.fluid} alt={name} />
+
+                    <Title>{name}</Title>
+                  </ScrollAnimation>
                 </div>
               );
             })}
