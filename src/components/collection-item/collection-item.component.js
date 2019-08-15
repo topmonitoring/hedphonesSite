@@ -4,7 +4,6 @@ import { CartContext } from '../../providers/cart.provider';
 import {
   CollectionFooterContainer,
   CollectionItemContainer,
-  AddToCartButton,
 } from './collection-item.styles.js';
 
 const CollectionItem = ({ item }) => {

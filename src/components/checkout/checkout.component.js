@@ -41,7 +41,17 @@ const CheckoutPage = () => {
         <br />
         4242 4242 4242 4242 - Exp: 01/20 - CVV: 123
       </WarningContainer>
-      <button>CLICK HERE TO BUY</button>
+      <p>Изберете начин на плащане:</p>
+
+      <div>
+        <input type="radio" name="payment" value="Наложен платеж" />
+        Наложен платеж
+      </div>
+      <div>
+        <input type="radio" name="payment" value="Кредитна карта" />
+        Кредитна карта
+      </div>
+      <button className="button">CLICK HERE TO BUY</button>
     </CheckoutPageContainer>
   );
 };

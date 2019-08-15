@@ -3,37 +3,10 @@ import { Slide } from 'react-slideshow-image';
 import Img from 'gatsby-image';
 import { StaticQuery, graphql } from 'gatsby';
 
-const SLIDESHOW = [
-  {
-    image: 'slide1',
-    id: 1,
-  },
-  {
-    image: 'slide2',
-    id: 2,
-  },
-  {
-    image: 'slide3',
-    id: 3,
-  },
-];
-
 const SlideShow = () => (
   <StaticQuery
     query={graphql`
       query {
-        allFile(filter: { sourceInstanceName: { eq: "slides" } }) {
-          edges {
-            node {
-              relativePath
-              childImageSharp {
-                fluid(maxWidth: 1366, maxHeight: 650) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
         slide1: file(
           sourceInstanceName: { eq: "slides" }
           name: { eq: "slide1" }
