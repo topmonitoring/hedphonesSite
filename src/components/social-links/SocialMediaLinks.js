@@ -1,19 +1,19 @@
-import ExternalLink from '../components/ExternalLink';
+import ExternalLink from '../ExternalLink';
 
 import React from 'react';
 
 const SOCIAL = [
   {
     icon: 'fab fa-facebook',
-    link: 'https://github.com/ajayns/gatsby-absurd',
+    link: 'https://github.com/',
   },
   {
     icon: 'fab fa-instagram',
-    link: 'https://instagram.com/ajay_ns',
+    link: 'https://instagram.com/',
   },
   {
     icon: 'fab fa-twitter',
-    link: 'https://twitter.com/ajayns08',
+    link: 'https://twitter.com/',
   },
 ];
 

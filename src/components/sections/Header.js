@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import SilideShow from '../SlideShow';
+import SilideShow from '../slideshow/SlideShow';
 
 import { Container } from '../../components/globalSectionContainer';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { navigate } from 'gatsby-link';
 import { Section } from '../../components/globalSectionContainer';
 import styled from 'styled-components';
-import SocialMediaLinks from '../SocialMediaLinks';
+import SocialMediaLinks from '../social-links/SocialMediaLinks';
 
 function encode(data) {
   return Object.keys(data)
