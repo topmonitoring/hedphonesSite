@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import ReactModal from 'react-modal';
 
 export const CloseModal = styled.div`
@@ -16,9 +16,8 @@ export const CloseModal = styled.div`
 `;
 export const ModalContent = styled.div`
   display: flex;
+  height: 100%;
 `;
-
-const modal = css``;
 
 export const StyledModal = styled(ReactModal)`
   height: 700px;
@@ -26,5 +25,8 @@ export const StyledModal = styled(ReactModal)`
   margin: auto;
   width: 60%;
   margin-top: 130px;
-  ${modal}
+  @media screen and (max-width: 800px) {
+    width: 90%;
+    height: 40%;
+  }
 `;

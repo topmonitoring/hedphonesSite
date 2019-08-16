@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const CollectionContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-content: center;
 
   .title {
     font-size: 38px;
@@ -11,7 +12,7 @@ export const CollectionContainer = styled.div`
 
   .items {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
 
     & .collection-item {

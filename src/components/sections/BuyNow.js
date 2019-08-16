@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 import { Section } from '../../components/globalSectionContainer';
-import CollectionPage from '../collection/collection.component';
+import CollectionItems from '../collection-items/collection-items.component';
 import 'animate.css/animate.min.css';
 import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -57,21 +57,17 @@ const BackgroundSection = ({ className }) => (
                 fluid={data.threedimg.childImageSharp.fluid}
                 alt="youtubemocap"
               />
-              <div
-                style={{
-                  width: '100%',
-                  gridArea: 'text',
-                }}
-              >
+              <div>
                 <ScrollAnimation
                   animateIn="bounceInRight"
                   animateOut="bounceOutLeft"
                 >
                   <p
                     style={{
-                      width: '100%',
                       color: 'white',
                       textColor: 'white',
+                      width: '100%',
+                      gridArea: 'text',
                     }}
                   >
                     Слушалките са съвместими както с Android така и IOS
@@ -80,8 +76,9 @@ const BackgroundSection = ({ className }) => (
                     слушалки, зарядна станция (кутийка) и кабел за зареждане на
                     кутийката от тип (micro usb).
                   </p>
+                  <br />
                 </ScrollAnimation>
-                <CollectionPage />
+                <CollectionItems style={{ gridArea: 'items' }} />
               </div>
             </Grid>
           </BackgroundImage>
@@ -98,12 +95,24 @@ const Grid = styled.div`
   padding: 80px;
   display: grid;
   grid-gap: 60px;
-  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-columns: 1fr 2fr;
   grid-row-gap: 100px;
 
   grid-template-areas:
-    'heder heder heder'
-    'img blank text';
+    'heder heder '
+    'img text '
+    'items items ';
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'heder '
+      'img '
+      'text'
+      'items';
+    grid-gap: 30px;
+    padding: 10px;
+  }
 `;
 
 export default BackgroundSection;

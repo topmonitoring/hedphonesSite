@@ -5,12 +5,15 @@ export const CollectionItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 500px;
-  align-items: center;
-  position: relative;
+  margin: auto;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    height: 300px;
+  }
 
   .image {
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     margin-bottom: 5px;
@@ -23,13 +26,12 @@ export const CollectionItemContainer = styled.div`
 
     .button {
       opacity: 0.85;
-      display: flex;
     }
   }
 `;
 
 export const CollectionFooterContainer = styled.div`
-  width: 95%;
+  width: 100%;
   height: 5%;
   display: flex;
   justify-content: space-between;

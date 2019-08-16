@@ -6,9 +6,13 @@ const normalize = `
 
 const GlobalStyles = createGlobalStyle`
   ${normalize};
+  * {
+  box-sizing: border-box;
+}
 
   body {
     font-family: ${props => props.theme.font.secondary};
+    
   }
   button {
   background-color: rgb(141, 8, 8);

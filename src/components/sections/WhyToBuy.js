@@ -66,8 +66,8 @@ const WhyToBuy = () => (
       <Section
         id="why to buy" //accent="secondary"
       >
-        <Container style={{ position: 'relative' }}>
-          <ScrollAnimation animateIn="fadeIn">
+        <Container style={{ position: 'relative', textAlign: 'center' }}>
+          <ScrollAnimation animateIn="flipInY" animateOut="flipOutY">
             <h1>Защо да купим</h1>
           </ScrollAnimation>
           <ItemsmGrid>
@@ -78,7 +78,7 @@ const WhyToBuy = () => (
 
               return (
                 <div key={name}>
-                  <ScrollAnimation animateIn="fadeIn" duration={5}>
+                  <ScrollAnimation animateIn="fadeIn" duration={4}>
                     <Img fluid={img.childImageSharp.fluid} alt={name} />
 
                     <Title>{name}</Title>

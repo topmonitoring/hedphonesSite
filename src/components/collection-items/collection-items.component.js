@@ -4,9 +4,9 @@ import CollectionItem from '../collection-item/collection-item.component';
 
 import CartColectionsContext from '../../contexts/cart.context';
 
-import { CollectionContainer } from './collection.styles.js';
+import { CollectionContainer } from './collection-items.styles';
 
-const CollectionPage = () => {
+const CollectionItems = () => {
   const collection = useContext(CartColectionsContext);
   const { items } = collection;
   return (
@@ -20,4 +20,4 @@ const CollectionPage = () => {
   );
 };
 
-export default CollectionPage;
+export default CollectionItems;

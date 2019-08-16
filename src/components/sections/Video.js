@@ -8,6 +8,7 @@ import { Section } from '../../components/globalSectionContainer';
 import PopUp from '../ModalPopUp/ModalPopUp';
 import 'animate.css/animate.min.css';
 import ScrollAnimation from 'react-animate-on-scroll';
+import { ReactComponent as YtubePlayButton } from '../../assets/youtube-playButon-logo.svg';
 
 const BackgroundSection = ({ className }) => (
   <StaticQuery
@@ -48,7 +49,11 @@ const BackgroundSection = ({ className }) => (
               <ScrollAnimation
                 animateIn="flipInY"
                 animateOut="flipOutY"
-                style={{ gridArea: 'heder', color: 'white' }}
+                style={{
+                  gridArea: 'heder',
+                  color: 'white',
+                  textAlign: 'center',
+                }}
               >
                 <h1>Как работят.?</h1>
               </ScrollAnimation>
@@ -56,8 +61,8 @@ const BackgroundSection = ({ className }) => (
                 content={
                   <iframe
                     title="youtube-review"
-                    width="1280"
-                    height="720"
+                    width="100%"
+                    height="100%"
                     src="https://www.youtube.com/embed/7i6enCs52S8"
                     frameBorder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -65,11 +70,24 @@ const BackgroundSection = ({ className }) => (
                   />
                 }
               >
-                <Img
-                  style={{ gridArea: 'img' }}
-                  fluid={data.youtubemocap.childImageSharp.fluid}
-                  alt="youtubemocap"
-                />
+                <div style={{ gridArea: 'img', alignContent: 'center' }}>
+                  <StyledGatsbyImg
+                    fluid={data.youtubemocap.childImageSharp.fluid}
+                    alt="youtubemocap"
+                  ></StyledGatsbyImg>
+                  <YtubePlayButton
+                    style={{
+                      margin: 'auto',
+                      width: 'auto',
+                      height: 'auto',
+                      position: 'absolute',
+                      display: 'block',
+                      left: '0',
+                      top: '0',
+                      fill: 'red',
+                    }}
+                  />
+                </div>
               </PopUp>
               <ScrollAnimation
                 animateIn="fadeIn"
@@ -90,16 +108,29 @@ const BackgroundSection = ({ className }) => (
     }}
   />
 );
+
+const StyledGatsbyImg = styled(Img)`
+  position: relative;
+  top: 0;
+  left: 0;
+  &:hover {
+    opacity: 0.9;
+  }
+`;
+
 const StyledBackgroundSection = styled(BackgroundSection)`
   width: 100%;
   height: 920px;
   background-position: bottom center;
   background-repeat: repeat-y;
   background-size: cover;
+  @media screen and (max-width: 800px) {
+    height: 700px;
+  }
 `;
 
 const Grid = styled.div`
-  text-align: center;
+  text-align: left;
   margin: auto;
   width: 100%;
   padding: 80px;
@@ -111,6 +142,16 @@ const Grid = styled.div`
   grid-template-areas:
     'heder  heder'
     'img  text';
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'heder '
+      'img '
+      'text';
+    grid-gap: 50px;
+    padding: 10px;
+  }
 `;
 
 export default StyledBackgroundSection;

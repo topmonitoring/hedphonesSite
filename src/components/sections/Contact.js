@@ -140,6 +140,9 @@ const FormGrid = styled.div`
     'name email'
     'message message'
     'button button';
+  @media screen and (max-width: 800px) {
+    width: 90%;
+  }
 `;
 
 const Center = styled.div`
@@ -147,4 +150,7 @@ const Center = styled.div`
   margin: auto;
   width: 40%;
   padding: 10px;
+  @media screen and (max-width: 800px) {
+    width: 90%;
+  }
 `;

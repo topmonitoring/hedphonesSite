@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-absurd",
+  "name": "gatsby-hedphones",
   "private": true,
   "description": "An absurd starter for Gatsby",
   "version": "0.1.0",
-  "author": "Ajay NS <ajay.ns@outlook.com>",
+  "author": "Dobrin Dobrev",
   "dependencies": {
     "@svgr/webpack": "^4.1.0",
     "animate.css": "^3.7.2",
@@ -25,7 +25,7 @@
     "react-anchor-link-smooth-scroll": "^1.0.11",
     "react-animate-on-scroll": "^2.1.5",
     "react-collapsible": "^2.6.0",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.9.0",
     "react-helmet": "^5.2.0",
     "react-modal": "^3.9.1",
     "react-modal-video": "^1.2.2",
@@ -45,6 +45,7 @@
     "clean": "rm -rf .cache && rm -rf public"
   },
   "devDependencies": {
+    "@hot-loader/react-dom": "^16.9.0",
     "prettier": "^1.15.2"
   }
 }

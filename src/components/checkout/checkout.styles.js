@@ -1,19 +1,32 @@
 import styled from 'styled-components';
 
+export const CheckoutButton = styled.button`
+  width: 40vw;
+  background-color: green;
+  margin: 0px;
+  border-radius: 0;
+`;
+
 export const CheckoutPageContainer = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5px auto 0;
+  margin: 1px auto 0;
   background-color: white;
-  height: 700px;
 
   button {
-    margin-top: 50px;
+    margin-top: 5px;
+    height: 50px;
   }
   @media screen and (max-width: 800px) {
-    width: 90%;
+    width: 100%;
+    height: 450px;
+    button {
+      width: 90%;
+      height: 35px;
+    }
   }
 `;
 
@@ -43,6 +56,10 @@ export const TotalContainer = styled.div`
   margin-top: 30px;
   margin-left: auto;
   font-size: 36px;
+  @media screen and (max-width: 800px) {
+    margin-top: 15px;
+    font-size: 14px;
+  }
 `;
 
 export const WarningContainer = styled.div`
@@ -50,4 +67,8 @@ export const WarningContainer = styled.div`
   margin-top: 40px;
   font-size: 24px;
   color: red;
+  @media screen and (max-width: 800px) {
+    margin-top: 15px;
+    font-size: 14px;
+  }
 `;

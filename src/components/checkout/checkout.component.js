@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import CheckoutItem from '../checkout-item/checkout-item.component';
 import { CartContext } from '../../providers/cart.provider';
-import styled from 'styled-components';
 
 import {
   CheckoutPageContainer,
@@ -9,6 +8,7 @@ import {
   HeaderBlockContainer,
   TotalContainer,
   WarningContainer,
+  CheckoutButton,
 } from './checkout.styles.js';
 
 const CheckoutPage = () => {
@@ -49,10 +49,3 @@ const CheckoutPage = () => {
 };
 
 export default CheckoutPage;
-
-const CheckoutButton = styled.button`
-  width: 40vw;
-  background-color: green;
-  margin: 0px;
-  border-radius: 0;
-`;
