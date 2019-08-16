@@ -8,7 +8,6 @@ import { Section } from '../../components/globalSectionContainer';
 import PopUp from '../ModalPopUp/ModalPopUp';
 import 'animate.css/animate.min.css';
 import ScrollAnimation from 'react-animate-on-scroll';
-import { ReactComponent as YtubePlayButton } from '../../assets/youtube-playButon-logo.svg';
 
 const BackgroundSection = ({ className }) => (
   <StaticQuery
@@ -70,24 +69,10 @@ const BackgroundSection = ({ className }) => (
                   />
                 }
               >
-                <div style={{ gridArea: 'img', alignContent: 'center' }}>
-                  <StyledGatsbyImg
-                    fluid={data.youtubemocap.childImageSharp.fluid}
-                    alt="youtubemocap"
-                  ></StyledGatsbyImg>
-                  <YtubePlayButton
-                    style={{
-                      margin: 'auto',
-                      width: 'auto',
-                      height: 'auto',
-                      position: 'absolute',
-                      display: 'block',
-                      left: '0',
-                      top: '0',
-                      fill: 'red',
-                    }}
-                  />
-                </div>
+                <StyledGatsbyImg
+                  fluid={data.youtubemocap.childImageSharp.fluid}
+                  alt="youtubemocap"
+                ></StyledGatsbyImg>
               </PopUp>
               <ScrollAnimation
                 animateIn="fadeIn"
@@ -110,6 +95,8 @@ const BackgroundSection = ({ className }) => (
 );
 
 const StyledGatsbyImg = styled(Img)`
+  grid-area: 'img';
+  align-content: center;
   position: relative;
   top: 0;
   left: 0;

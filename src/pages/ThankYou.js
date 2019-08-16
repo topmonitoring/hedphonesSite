@@ -8,9 +8,9 @@ import styled from 'styled-components';
 const ThankYouPage = () => (
   <Layout>
     <Center>
-      <h1>Thank you!</h1>
-      <p>This is a custom thank you page for form submissions</p>
-      <Link to="/">Go back to the homepage</Link>
+      <h1>Благодарим ви!</h1>
+      <p>Заявката ви беше изпратена успешно</p>
+      <Link to="/">Обратно към началната страница</Link>
     </Center>
     <Footer />
   </Layout>

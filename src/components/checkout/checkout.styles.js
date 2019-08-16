@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-export const CheckoutButton = styled.button`
-  width: 40vw;
-  background-color: green;
-  margin: 0px;
-  border-radius: 0;
-`;
-
 export const CheckoutPageContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -19,6 +12,7 @@ export const CheckoutPageContainer = styled.div`
   button {
     margin-top: 5px;
     height: 50px;
+    width: 50%;
   }
   @media screen and (max-width: 800px) {
     width: 100%;
