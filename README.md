@@ -1,9 +1,15 @@
-# gatsby-absurd
+# gatsby-SPA hedphones
 
-An absurd Gatsby starter. The collection of illustrations, [absurd.design](https://absurd.design/) by [Diana Valeanu](https://twitter.com/diana_valeanu) is a very fascinating and beautiful project with some pretty thoughtful concepts. Experimentation on how that could be put together on a site ended up as this starter.
-git
+This is single page e-comerce static website made with Gatsby.js with:
+Context API
+GrafQl
+Stripe Integration
+Scroll animations
+StyedComponents
+Netlify form submitions to email with(Zapier)
+Fully mobile functional
 
-## Live Preview on netlify
+## Check Out Live Preview on netlify
 
 https://infallible-neumann-ed45f1.netlify.com/
 
