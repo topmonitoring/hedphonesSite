@@ -1,13 +1,13 @@
 # gatsby-SPA hedphones
 
 This is single page e-comerce static website made with Gatsby.js with:
-Context API
-GrafQl
-Stripe Integration
-Scroll animations
-StyedComponents
-Netlify form submitions to email with(Zapier)
-Fully mobile functional
+- Context API
+- GrafQl
+- Stripe Integration
+- Scroll animations
+- StyedComponents
+- Netlify form submitions to email with(Zapier)
+- Fully mobile functional
 
 ## Check Out Live Preview on netlify
 
